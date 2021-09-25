@@ -1,0 +1,29 @@
+﻿@model Precencial.Models.CamposViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:darkblue">Ingresar datos</h1>
+
+@using (Html.BeginForm("Index", "Persona", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Nombre)
+    @Html.TextBoxFor(m => m.Nombre)
+    @Html.ValidationMessageFor(m => m.Nombre, null)
+    <br />
+    @Html.LabelFor(m => m.Edad)
+    @Html.TextBoxFor(m => m.Edad, new { type="number"})
+    @Html.ValidationMessageFor(m => m.Edad, null)
+    <br />
+    @Html.LabelFor(m => m.Sexo)
+    @Html.TextBoxFor(m => m.Sexo)
+    @Html.ValidationMessageFor(m => m.Sexo, null)
+    <br />
+    @Html.LabelFor(m => m.Educacion)
+    @Html.TextBoxFor(m => m.Educacion)
+    @Html.ValidationMessageFor(m => m.Educacion, null)
+    <br />
+
+    <input type="submit" value="Enviar"/>
+}
+
